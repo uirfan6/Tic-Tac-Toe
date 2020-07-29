@@ -97,7 +97,7 @@ def  main():
     p = [1,2,3,4,5,6,7,8,9]
                               
     print("Welcome to Tic-Tac-Toe!")
-                          
+	print ("You might Die!")                          
     player1 = input("Player 1: What is your name? ")
     player2 = input("player 2: What is your name? ")
     while (player1 == player2):
