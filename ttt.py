@@ -1,6 +1,10 @@
 #!/usr/bin/env python3.8
 #Tic Tac Toe
 
+import sys
+
+arg = 1
+
 def vertical():
     print("     |     |     ")
 
@@ -10,7 +14,11 @@ def horizontal():
 
 
 def choose(p, position, symbol, player):
-    position = input(player + ": pick an available position between 1-9:")
+    global arg
+    #position = input(player + ": pick an available position between 1-9:")
+    print(player + ": pick an available position between 1-9:")
+    position = sys.argv[arg]
+    arg = arg + 1
     position = check1(position, player)
     position = check2(position, player)
     choice(p,int(position), symbol, player)
@@ -96,17 +104,33 @@ def play(p,player1,player2,symbol1,symbol2):
                           
 def  main():
     p = [1,2,3,4,5,6,7,8,9]
+    input_list = sys.argv
+    global arg
+
+    print("This is the input_list: ", input_list)
                               
     print("Welcome to Tic-Tac-Toe!")
     print("I will not Die!")                      
-    player1 = input("Player 1: What is your name? ")
-    player2 = input("player 2: What is your name? ")
+    #player1 = input("Player 1: What is your name? ")
+    print("Player 1: What is your name? ")
+    player1 = sys.argv[arg]
+    arg = arg + 1
+    #player2 = input("player 2: What is your name? ")
+    print("Player 2: What is your name? ")
+    player2 = sys.argv[arg]
+    arg = arg + 1
     while (player1 == player2):
         player2 = input("Player 2: The name " + player2 + " is already taken. Please choose a different name:")
                           
 
-    symbol1 = input(player1 + ": Please choose your symbol:")
-    symbol2 = input(player2 + ": Please choose your symbol:")
+    #symbol1 = input(player1 + ": Please choose your symbol:")
+    print(player1 + ": Please choose your symbol:")
+    symbol1 = sys.argv[arg]
+    arg = arg + 1
+    #symbol2 = input(player2 + ": Please choose your symbol:")
+    print(player2 + ": Please choose your symbol:")
+    symbol2 = sys.argv[arg]
+    arg = arg + 1
     while (symbol1 == symbol2):
         symbol2 = input(player2 + ": The symbol " + symbol2 + " is taken. Please choose a different symbol:")
                           
