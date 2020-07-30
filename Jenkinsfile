@@ -1,4 +1,21 @@
-ls
-pwd
-chmod 777 ttt.py
-./ttt.py ariza uroosa A U 5 4 6 3 2 8 1 9 7
+Pipeline {
+	agent any
+	stages {
+		stage ('Build') {
+			steps {
+				echo 'Building your Pipeline'
+			}
+		}
+	 	stage ('Test') {
+			steps {
+				echo 'Testing your Pipleline'
+			}
+		}
+		stage ('Deploy') {
+			steps {
+				echo 'Deploying your Pipeline'
+				echo 'All done UROOSA!!!!!'
+			}
+		} 
+	}
+}
