@@ -1,4 +1,4 @@
-#!/usr/lib/python3
+#!/usr/bin/env python3.8
 #Tic Tac Toe
 
 def vertical():
